@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405015437) do
+ActiveRecord::Schema.define(version: 20160405233101) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "url"
@@ -27,5 +27,46 @@ ActiveRecord::Schema.define(version: 20160405015437) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end
+
+  create_table "components", force: :cascade do |t|
+    t.integer  "article_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "title"
+    t.text     "description"
+    t.string   "selection_hash"
+    t.string   "tools_visualization_used_tags"
+    t.string   "tools_publication_used_tags"
+    t.string   "tools_platform_designed_for_tags"
+    t.string   "tools_additional_details"
+    t.string   "design_graphic_type"
+    t.string   "design_graphic_choice_details"
+    t.string   "design_interactive_tags"
+    t.string   "design_usability_testing_details"
+    t.string   "design_additional_details"
+  end
+
+  add_index "components", ["article_id"], name: "index_components_on_article_id"
+
+  create_table "creators", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "data_sources", force: :cascade do |t|
+    t.integer  "component_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "data_sources", ["component_id"], name: "index_data_sources_on_component_id"
+
+  create_table "design_elements", force: :cascade do |t|
+    t.integer  "component_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "design_elements", ["component_id"], name: "index_design_elements_on_component_id"
 
 end
