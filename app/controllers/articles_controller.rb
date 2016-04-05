@@ -15,8 +15,21 @@ class ArticlesController < ApplicationController
   def new
   end
 
+  def embedded_form
+  end
+
+  def embedded_show
+    @article = Article.find(params[:id])
+  end
+
   def create
     @article = Article.create(article_params)
+
+    # if article_params[:embedded_form]
+    #   redirect_to article_embedded_show_url(id: @article.id)
+    # else
+    #   redirect_to @article
+    # end
 
     respond_to do |wants|
       wants.html { redirect_to @article }

@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Describe your graphic</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+
+  <%= form_for :article, :url => {:action => "create"} do |f| %>
+    <%# f.hidden_field :embedded_form, :value => true %>
+
+    <div class="form-group">
+      <label for="url">Article URL <span class="required-field">*</span></label>
+      <%= f.text_field :url, class: "form-control", placeholder: "www.example.com" %>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Article Title <span class="required-field">*</span></label>
+      <%= f.text_field :title, class: "form-control", placeholder: "" %>
+    </div>
+
+    <div class="form-group">
+      <label for="creator_author">Article Author <span class="required-field">*</span></label>
+      <%= f.text_field :creator_author, class: "form-control", placeholder: "" %>
+    </div>
+
+    <div class="form-group">
+      <label for="creator_designer">Article Designer <span class="required-field">*</span></label>
+      <%= f.text_field :creator_designer, class: "form-control", placeholder: "" %>
+    </div>
+
+    <p>
+      <%= f.submit 'Submit', class: "btn btn-success" %>
+    </p>
+  <% end %>
+</div>

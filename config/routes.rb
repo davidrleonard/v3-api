@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  get 'articles/embedded_form', to: 'articles#embedded_form', as: :artcile_embedded_form
+  get 'articles/embedded_show', to: 'articles#embedded_show', as: :artcile_embedded_show
+
   resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
