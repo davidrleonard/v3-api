@@ -1,0 +1,27 @@
+<h1>Create a new article</h1>
+
+<%= form_for :article, :url => {:action => "create"} do |f| %>
+  <p>
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :creator_author %><br>
+    <%= f.text_field :creator_author %>
+  </p>
+
+  <p>
+    <%= f.label :creator_designer %><br>
+    <%= f.text_field :creator_designer %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

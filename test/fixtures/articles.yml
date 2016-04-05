@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyString
+  title: MyString
+  creator_designer: MyString
+  creator_author: MyString
+  creator_data_wrangler: MyString
+  creator_programmer: MyString
+  creator_researcher: MyString
+  creator_fact_checker: MyString
+  creator_copy_editor: MyString
+  creator_others: MyString
+
+two:
+  url: MyString
+  title: MyString
+  creator_designer: MyString
+  creator_author: MyString
+  creator_data_wrangler: MyString
+  creator_programmer: MyString
+  creator_researcher: MyString
+  creator_fact_checker: MyString
+  creator_copy_editor: MyString
+  creator_others: MyString
