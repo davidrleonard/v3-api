@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405233101) do
+ActiveRecord::Schema.define(version: 20160405233831) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "url"
@@ -55,8 +55,16 @@ ActiveRecord::Schema.define(version: 20160405233101) do
 
   create_table "data_sources", force: :cascade do |t|
     t.integer  "component_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "dataset_organization_name"
+    t.string   "dataset_url"
+    t.string   "dataset_name"
+    t.string   "dataset_source_file_url"
+    t.string   "dataset_file_format_tags"
+    t.string   "dataset_reproduction_instructions"
+    t.string   "dataset_choice_details"
+    t.string   "dataset_additional_details"
   end
 
   add_index "data_sources", ["component_id"], name: "index_data_sources_on_component_id"
