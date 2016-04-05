@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405234728) do
+ActiveRecord::Schema.define(version: 20160405235201) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "url"
@@ -42,11 +42,14 @@ ActiveRecord::Schema.define(version: 20160405234728) do
   add_index "components", ["article_id"], name: "index_components_on_article_id"
 
   create_table "creators", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "name"
     t.string   "role"
+    t.integer  "component_id"
   end
+
+  add_index "creators", ["component_id"], name: "index_creators_on_component_id"
 
   create_table "data_sources", force: :cascade do |t|
     t.integer  "component_id"
