@@ -11,21 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405234416) do
+ActiveRecord::Schema.define(version: 20160405234728) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "url"
     t.string   "title"
-    t.string   "creator_designer"
-    t.string   "creator_author"
-    t.string   "creator_data_wrangler"
-    t.string   "creator_programmer"
-    t.string   "creator_researcher"
-    t.string   "creator_fact_checker"
-    t.string   "creator_copy_editor"
-    t.string   "creator_others"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "descripion"
   end
 
   create_table "components", force: :cascade do |t|
