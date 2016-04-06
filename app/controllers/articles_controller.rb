@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @url = URI.decode(params[:url])
   end
 
   def create
