@@ -4,7 +4,7 @@
   <p>Describe this visualization and provide insights into your process. This will help others learn from you, and allow you to document your work.</p>
 
   <%= form_for :component, :url => {:action => "create"} do |f| %>
-    <%# f.hidden_field :embedded_form, :value => true %>
+    <%= f.hidden_field :article_id, :value => @article.id %>
 
     <h6 class="kicker">1. Overview</h6>
     <p class="overview">These questions will help you describe your visualization at a high level, so you and others can find it in the future.</p>

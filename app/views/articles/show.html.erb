@@ -1,3 +1,17 @@
-<% if @article %>
-  <p><%= @article.title %></p>
-<% end %>
+<div class="container">
+  <% if @article %>
+    <h2>Explore this article's visualizations</h2>
+    <h6 class="kicker">Title</h6>
+    <p><a href="<%= @article.url %>" target="_blank"><%= @article.title %></a></p>
+    <h6 class="kicker">Description</h6>
+    <p><%= @article.description %></p>
+  <% end %>
+  <% if @article.components.length > 0 %>
+    <h6 class="kicker">Tagged visualizations</h6>
+    <ul>
+      <% @article.components.each do |comp| %>
+        <li><%= comp.title %><br /><%= link_to 'See details about this visualization', comp %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

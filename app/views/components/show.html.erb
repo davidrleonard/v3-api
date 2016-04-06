@@ -1,6 +1,6 @@
 <div class="container">
   <% if @component %>
     <h2>Done!</h2>
-    <p>You've tagged up your visualization. Woot!</p>
+    <p>You've tagged up your visualization. Woot! <%= link_to 'See all visualizations tagged in this article.', @article %></p>
   <% end %>
 </div>
