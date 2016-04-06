@@ -22,17 +22,8 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.create(article_params)
-
-    # if article_params[:embedded_form]
-    #   redirect_to article_embedded_show_url(id: @article.id)
-    # else
-    #   redirect_to @article
-    # end
-
-    respond_to do |wants|
-      wants.html { redirect_to @article }
-      wants.json { render json: @article, status: :ok }
-    end
+    # redirect_to @article
+    redirect_to new_component_path(article_id: @article.id)
   end
 
   def destroy
@@ -43,7 +34,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      permitted_fields = [:url, :title, :creator_designer, :creator_author, :creator_data_wrangler, :creator_programmer, :creator_researcher, :creator_fact_checker, :creator_copy_editor, :creator_others]
+      permitted_fields = [:url, :title, :description]
       params.fetch(:article, {}).permit(permitted_fields)
     end
 end

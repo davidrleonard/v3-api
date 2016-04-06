@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Tell us about this visualization</h2>
+  <p>Describe how you created it so you can share with the community.</p>
+
+  <%= form_for :component, :url => {:action => "create"} do |f| %>
+    <%# f.hidden_field :embedded_form, :value => true %>
+
+    <div class="form-group">
+      <label for="url">Component Title <span class="required-field">*</span></label>
+      <%= f.text_field :title, class: "form-control", placeholder: "Enter a title here" %>
+    </div>
+
+    <div class="form-group">
+      <label for="url">Component Description <span class="required-field">*</span></label>
+      <%= f.text_area :text_field, class: "form-control", placeholder: "Enter a title here" %>
+    </div>
+
+    <p>
+      More...
+    </p>
+
+    <%= f.submit 'Next', class: "btn btn-success" %>
+  <% end %>
+</div>
