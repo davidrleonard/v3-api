@@ -15,6 +15,10 @@ class ArticlesController < ApplicationController
   def new
     if params[:url]
       @url = URI.decode(params[:url])
+      if Article.exists?(url: params[:url])
+        @article = Article.find_by(url: params[:url])
+        redirect_to new_component_path(article_id: @article.id, component_title: params[:component_title])
+      end
     else
       @url = "unknown"
     end

@@ -4,6 +4,7 @@ class ComponentsController < ApplicationController
 
   def show
     @component = Component.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def edit
@@ -17,7 +18,8 @@ class ComponentsController < ApplicationController
   end
 
   def create
-    @component = Component.create(article_params)
+    @component = Component.create(component_params)
+    redirect_to @component
     # redirect_to @article
     # redirect_to new_component_path(article_id: @article.id)
   end

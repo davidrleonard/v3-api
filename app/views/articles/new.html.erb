@@ -11,13 +11,13 @@
     </div>
 
     <div class="form-group">
-      <label for="url">Article Description <span class="required-field">*</span></label>
-      <%= f.text_area :text_field, class: "form-control", placeholder: "Enter a title here" %>
+      <label for="description">Article Description <span class="required-field">*</span></label>
+      <%= f.text_area :description, class: "form-control", placeholder: "Enter a title here" %>
     </div>
 
     <div class="form-group">
       <label for="url">Article URL <span class="required-field">*</span></label>
-      <%= f.text_field :url, class: "form-control", placeholder: "www.example.com", value: @url, disabled: true %>
+      <%= f.text_field :url, class: "form-control", placeholder: "www.example.com", value: @url, readonly: true %>
     </div>
 
     <%= f.submit 'Next', class: "btn btn-success" %>

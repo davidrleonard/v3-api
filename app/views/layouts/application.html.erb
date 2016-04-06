@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>V3ApiRails</title>
+  <title>vizfyi</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="container">
-  <p style="text-transform:uppercase;padding-top:5px;"><small>Visualization Verification View</small></p>
+  <p style="padding-top:5px;"><small><strong>viz</strong>fyi</small></p>
 </div>
 
 <%= yield %>
 
+<%= yield :page_scripts %>
 </body>
 </html>

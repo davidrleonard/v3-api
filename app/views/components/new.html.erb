@@ -1,77 +1,113 @@
 <div class="container">
+  <p style="color:gray;"><small>ARTICLE: <%= @article.title %></small></p>
   <h2>Tell us about this visualization</h2>
-  <p>Describe how you created it so you can share with the community.</p>
+  <p>Describe this visualization and provide insights into your process. This will help others learn from you, and allow you to document your work.</p>
 
   <%= form_for :component, :url => {:action => "create"} do |f| %>
     <%# f.hidden_field :embedded_form, :value => true %>
 
-    <h4 style="margin: 2em 0 1em;text-transform:uppercase;color:rgba(0,0,0,0.4)">Overview</h4>
-
+    <h6 class="kicker">1. Overview</h6>
+    <p class="overview">These questions will help you describe your visualization at a high level, so you and others can find it in the future.</p>
     <div class="form-group">
-      <label for="title">Component Title <span class="required-field">*</span></label>
-      <%= f.text_field :title, class: "form-control", placeholder: "" %>
+      <label for="title">What is the title of this visualization?</label>
+      <%= f.text_field :title, class: "form-control", placeholder: "", value: params[:component_title], readonly: true %>
     </div>
 
     <div class="form-group">
-      <label for="description">Component Description <span class="required-field">*</span></label>
+      <label for="description">Briefly, what does this visualization show?</label>
+      <p class="help-block">Why did you create it? What does it show? Give 1-2 short sentences of detail.</p>
       <%= f.text_area :description, class: "form-control", placeholder: "" %>
     </div>
 
-    <h4 style="margin: 2em 0 1em;text-transform:uppercase;color:rgba(0,0,0,0.4)">Tools and technology</h4>
+    <h6 class="kicker">2. Tools and technology</h6>
+    <p class="overview">Detail the tools you used to crunch your data and create your visualization.</p>
 
     <div class="form-group">
-      <label for="tools_visualization_used_tags">What visualization tools did you use? <span class="required-field">*</span></label>
+      <label for="tools_visualization_used_tags">What visualization tools did you use?</label>
+      <p class="help-block">For example: Illustrator, D3, Excel</p>
       <div class="col-12-sm">
         <%= f.text_field :tools_visualization_used_tags, class: "form-control", placeholder: "", data: { role: "tagsinput" } %>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="tools_publication_used_tags">How did you prep this for publication? <span class="required-field">*</span></label>
-      <%= f.text_field :tools_publication_used_tags, class: "form-control", placeholder: "" %>
-    </div>
-
-    <div class="form-group">
-      <label for="tools_platform_designed_for_tags">What platforms was this designed for? <span class="required-field">*</span></label>
+      <label for="tools_platform_designed_for_tags">What platforms was this designed for?</label>
+      <p class="help-block">For example: mobile web, iOS app, Apple News</p>
       <div class="col-12-sm">
         <%= f.text_field :tools_platform_designed_for_tags, class: "form-control", placeholder: "", data: { role: "tagsinput" } %>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="tools_additional_details">Any other details about this tool? <span class="required-field">*</span></label>
-      <%= f.text_area :tools_additional_details, class: "form-control", placeholder: "" %>
+      <label for="tools_publication_used_tags">What publication tools did you use?</label>
+      <p class="help-block">For example: CMS, Jekyll, static generator, grunt</p>
+      <%= f.text_field :tools_publication_used_tags, class: "form-control", placeholder: "", data: { role: "tagsinput" } %>
     </div>
 
-    <h4 style="margin: 2em 0 1em;text-transform:uppercase;color:rgba(0,0,0,0.4)">Design choices</h4>
+    <!--
+    <div class="form-group">
+      <label for="tools_additional_details">Any other details about this tool?</label>
+      <%= f.text_area :tools_additional_details, class: "form-control", placeholder: "" %>
+    </div>
+    -->
+
+    <h6 class="kicker">3. Design choices</h6>
+    <p class="overview">Explain the design choices you made when crafting your visualization.</p>
 
     <div class="form-group">
-      <label for="design_graphic_type">What type of visuals did you use? <span class="required-field">*</span></label>
+      <label for="design_graphic_type">What type of visuals did you use?</label>
+      <p class="help-block">For example: map, bar chart, animation</p>
       <div class="col-12-sm">
         <%= f.text_field :design_graphic_type, class: "form-control", placeholder: "", data: { role: "tagsinput" } %>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="design_graphic_choice_details">What did you choose that visual style? <span class="required-field">*</span></label>
+      <label for="design_graphic_choice_details">What did you choose that type of visual?</label>
       <%= f.text_area :design_graphic_choice_details, class: "form-control", placeholder: "" %>
     </div>
 
+    <!--
     <div class="form-group">
-      <label for="design_interactive_tags">How did you make this visualization interactive? <span class="required-field">*</span></label>
+      <label for="design_interactive_tags">How did you make this visualization interactive?</label>
       <%= f.text_field :design_interactive_tags, class: "form-control", placeholder: "" %>
     </div>
+  -->
 
     <div class="form-group">
-      <label for="design_usability_testing_details">How did you usability text this visualization? <span class="required-field">*</span></label>
-      <%= f.text_field :design_usability_testing_details, class: "form-control", placeholder: "" %>
+      <label for="design_usability_testing_details">How did you usability test it?</label>
+      <%= f.text_area :design_usability_testing_details, class: "form-control", placeholder: "" %>
     </div>
 
+    <!--
     <div class="form-group">
-      <label for="design_additional_details">What else would you like to say about this visualization? <span class="required-field">*</span></label>
+      <label for="design_additional_details">What else would you like to say about this visualization?</label>
       <%= f.text_field :design_additional_details, class: "form-control", placeholder: "" %>
     </div>
+    -->
 
-    <%= f.submit 'Submit', class: "btn btn-success" %>
+    <%= f.submit 'Next', class: "btn btn-success" %>
   <% end %>
 </div>
+
+<% content_for :page_scripts do %>
+  <script>
+  // var visualizationToolsSource = [
+  //   'First', 'Bar', 'Zoo'
+  // ];
+  // var visualizationTools = new Bloodhound({
+  //   datumTokenizer: Bloodhound.tokenizers.whitespace,
+  //   queryTokenizer: Bloodhound.tokenizers.whitespace,
+  //   // `states` is an array of state names defined in "The Basics"
+  //   local: visualizationToolsSource
+  // });
+  // $('#component[title]').tagsinput({
+  //   typeaheadjs: {
+  //     name: 'citynames',
+  //     displayKey: 'name',
+  //     valueKey: 'name',
+  //     source: visualizationTools
+  //   }
+  // });
+  </script>
+<% end %>

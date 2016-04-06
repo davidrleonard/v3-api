@@ -16,3 +16,24 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "bootstrap-tagsinput";
+
+// Basic stuff
+$light-gray: rgba(0,0,0,0.4);
+.kicker {
+  margin: 3em 0 1em;
+  text-transform: uppercase;
+  color: $light-gray;
+  // font-weight: 400;
+}
+.overview {
+  color: $light-gray;
+  font-size: 0.87em;
+  margin-top: -.5em;
+  margin-bottom: 1em;
+}
+.help-block {
+  font-size: 0.87em;
+}
+label + .help-block {
+  margin-top: -.3em;
+}
