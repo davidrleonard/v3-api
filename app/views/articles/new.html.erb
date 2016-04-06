@@ -3,7 +3,7 @@
   <p>Enter some basic details about this article before you annotate your visualization.</p>
 
   <%= form_for :article, :url => {:action => "create"} do |f| %>
-    <%# f.hidden_field :embedded_form, :value => true %>
+    <%= f.hidden_field :component_title, :value => @component_title %>
 
     <div class="form-group">
       <label for="url">Article Title <span class="required-field">*</span></label>
