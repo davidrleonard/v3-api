@@ -1,2 +1,19 @@
-<h1>Static#index</h1>
-<p>Find me in app/views/static/index.html.erb</p>
+<div class="container">
+  <h1>Explain your visuals.</h1>
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <ul class="list-unstyled">
+    <% @articles.each do |article| %>
+      <li style="margin-top:5em;border-top:1px solid gray;">
+        <h6 class="kicker">Article overview</h6>
+        <h3><a href="<%= article.url %>" target="_blank"><%= article.title %></a></h3>
+        <p><%= article.description %></p>
+        <% if article.components.length > 0 %>
+          <h5 class='kicker'>Tagged visualizations</h5>
+          <% article.components.each do |comp| %>
+            <%= comp.title %><br /><%= link_to 'See details about this visualization', comp %><br /><br />
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
