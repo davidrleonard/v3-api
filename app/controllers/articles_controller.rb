@@ -13,7 +13,11 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @url = URI.decode(params[:url])
+    if params[:url]
+      @url = URI.decode(params[:url])
+    else
+      @url = "unknown"
+    end
   end
 
   def create
