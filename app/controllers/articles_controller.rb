@@ -15,13 +15,6 @@ class ArticlesController < ApplicationController
   def new
   end
 
-  def embedded_form
-  end
-
-  def embedded_show
-    @article = Article.find(params[:id])
-  end
-
   def create
     @article = Article.create(article_params)
 
