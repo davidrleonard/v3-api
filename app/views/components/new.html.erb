@@ -5,20 +5,67 @@
   <%= form_for :component, :url => {:action => "create"} do |f| %>
     <%# f.hidden_field :embedded_form, :value => true %>
 
+    <h4 style="margin: 2em 0 1em;text-transform:uppercase;color:rgba(0,0,0,0.4)">Overview</h4>
+
     <div class="form-group">
-      <label for="url">Component Title <span class="required-field">*</span></label>
-      <%= f.text_field :title, class: "form-control", placeholder: "Enter a title here" %>
+      <label for="title">Component Title <span class="required-field">*</span></label>
+      <%= f.text_field :title, class: "form-control", placeholder: "" %>
     </div>
 
     <div class="form-group">
-      <label for="url">Component Description <span class="required-field">*</span></label>
-      <%= f.text_area :text_field, class: "form-control", placeholder: "Enter a title here" %>
+      <label for="description">Component Description <span class="required-field">*</span></label>
+      <%= f.text_area :description, class: "form-control", placeholder: "" %>
     </div>
 
-    <p>
-      More...
-    </p>
+    <h4 style="margin: 2em 0 1em;text-transform:uppercase;color:rgba(0,0,0,0.4)">Tools and technology</h4>
 
-    <%= f.submit 'Next', class: "btn btn-success" %>
+    <div class="form-group">
+      <label for="tools_visualization_used_tags">What visualization tools did you use? <span class="required-field">*</span></label>
+      <%= f.text_field :tools_visualization_used_tags, class: "form-control", placeholder: "" %>
+    </div>
+
+    <div class="form-group">
+      <label for="tools_publication_used_tags">How did you prep this for publication? <span class="required-field">*</span></label>
+      <%= f.text_field :tools_publication_used_tags, class: "form-control", placeholder: "" %>
+    </div>
+
+    <div class="form-group">
+      <label for="tools_platform_designed_for_tags">What platforms was this designed for? <span class="required-field">*</span></label>
+      <%= f.text_field :tools_platform_designed_for_tags, class: "form-control", placeholder: "" %>
+    </div>
+
+    <div class="form-group">
+      <label for="tools_additional_details">Any other details about this tool? <span class="required-field">*</span></label>
+      <%= f.text_area :tools_additional_details, class: "form-control", placeholder: "" %>
+    </div>
+
+    <h4 style="margin: 2em 0 1em;text-transform:uppercase;color:rgba(0,0,0,0.4)">Design choices</h4>
+
+    <div class="form-group">
+      <label for="design_graphic_type">What type of visuals did you use? <span class="required-field">*</span></label>
+      <%= f.text_field :design_graphic_type, class: "form-control", placeholder: "" %>
+    </div>
+
+    <div class="form-group">
+      <label for="design_graphic_choice_details">What did you choose that visual style? <span class="required-field">*</span></label>
+      <%= f.text_area :design_graphic_choice_details, class: "form-control", placeholder: "" %>
+    </div>
+
+    <div class="form-group">
+      <label for="design_interactive_tags">How did you make this visualization interactive? <span class="required-field">*</span></label>
+      <%= f.text_field :design_interactive_tags, class: "form-control", placeholder: "" %>
+    </div>
+
+    <div class="form-group">
+      <label for="design_usability_testing_details">How did you usability text this visualization? <span class="required-field">*</span></label>
+      <%= f.text_field :design_usability_testing_details, class: "form-control", placeholder: "" %>
+    </div>
+
+    <div class="form-group">
+      <label for="design_additional_details">What else would you like to say about this visualization? <span class="required-field">*</span></label>
+      <%= f.text_field :design_additional_details, class: "form-control", placeholder: "" %>
+    </div>
+
+    <%= f.submit 'Submit', class: "btn btn-success" %>
   <% end %>
 </div>
